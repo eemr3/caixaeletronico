@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Caixa Eletronico</title>
+</head>
+
+<body>
+    <header>
+        <h1>CAIXA ELETRÔNICO</h1>
+    </header>
+    <section >
+        <div class="form-cad">
+            <span class="info hide1">Operaçao realizada com sucesso</span>
+            <label for="name">Cadastro conta</label>
+
+            <input id="nome-cli" type="text" placeholder="Nome cliente">
+            <input id="valor-inicial" type="text" name="name" placeholder="Digite valor deposito inicial">
+            <button id="btn-cad">Enter</button>
+        </div>
+
+    </section>
+    <section class="form">
+        <span class="info hide1">Operaçao realizada com sucesso</span>
+
+        <label for="name">Valor do saque</label>
+        <input id="valorSaque" type="text" name="name" placeholder="Digite o valor do saque">
+        <button id="btn-saque" onclick="saque()">Enter</button>
+
+
+    </section>
+    <section class="form-dep">
+        <span class="info hide1">Operaçao realizada com sucesso</span>
+
+        <label for="name">Valor do deposito</label>
+        <input id="valorDep" type="text" name="name" placeholder="Digite o valor do saque">
+        <button id="btn-deposito" onclick="deposito()">Enter</button>
+
+
+    </section>
+    <main>
+        <div class="relatorio">
+            <h2>Relatório do saldo</h2>
+            <p class="nome">Cliente: <span id="name"></span></p>
+            <p class="saldo-anterior">Saldo anterior: <span id="saldo-anterior"></span></p>
+            <p class="saldo-atual">Saldo atual: <span id="saldo-atual"></span></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
