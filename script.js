@@ -1,18 +1,26 @@
-var name = ''
-var saldoInicial = 0;
-var result = 0;
+let numConta = Math.floor(Math.random() * 1000000) + 1
+let name = ''
+let saldoInicial = 0;
+let result = 0;
 
+console.log(numConta)
 document.querySelector('#btn-cad').addEventListener("click", () => {
     document.querySelector('.form-cad').classList.toggle('hide');
 
     name = document.querySelector('#nome-cli').value;
-    saldoInicial = document.querySelector('#valor-inicial').value;
+    saldoInicial = parseFloat(document.querySelector('#valor-inicial').value);
+    relatorio()
 });
 
 function saque() {
     let valor = document.querySelector('#valorSaque').value;
 
-    result = parseFloat(saldoInicial) - parseFloat(valor);
+    if (valor > saldoInicial) {
+        alert('Saldo insuficiente!')
+        return
+    } else {
+        result = parseFloat(saldoInicial) - parseFloat(valor);
+    }
 
     relatorio()
 
@@ -31,6 +39,7 @@ function deposito() {
 }
 
 function relatorio() {
+    document.querySelector('#numConta').innerHTML = numConta;
     document.querySelector('#name').innerHTML = name;
     document.querySelector('#saldo-anterior').innerHTML = `R$ ${saldoInicial}`;
     document.querySelector('#saldo-atual').innerHTML = `R$ ${result}`;
